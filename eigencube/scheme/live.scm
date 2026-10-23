@@ -1,2 +1,4 @@
 (define pending-move #f)
-; Example: (set! pending-move '(x 2 1))
+(define current-player "Don")
+(define player-list '("Don"))
+(define (add-player! n) (set! current-player n) #t)

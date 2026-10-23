@@ -5,3 +5,6 @@ scores/
 __pycache__/
 .venv/
 Thunar/
+main.c.bak
+*.dat
+scores/
