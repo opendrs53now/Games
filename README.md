@@ -1,14 +1,24 @@
-# Games — opendon53now
+# Games — Eigencube v9 - 1820 Edition + Pong
 
-[![Guix](https://img.shields.io/badge/Guix-2026-blue?logo=gnu)](https://guix.gnu.org)
-[![raylib](https://img.shields.io/badge/raylib-5.5-black)](https://www.raylib.com)
-[![GPL-3.0](https://img.shields.io/badge/license-GPL--3.0-green)](LICENSE)
+Monorepo of Guix / raylib games by Don.
 
-Persistent collection — outside /gnu/store, ~/.emacs.d, flatpak.
+## Eigencube v9 - 1820 Edition [CURRENT]
 
-## Games
-- **eigencube/** - 54 Tile 3D Cube v8.5.1 - timer starts on first move
-- **pong/** - Classic Pong C + raylib
+**No default player — starts clean.**
 
-Build: `guix shell raylib guile -- make -C eigencube && make -C pong`
-Run: `./eigencube/eigencube` and `./pong/pong`
+- `Player: "" ?` on launch — no "Don" default
+- `+ PLAYER` required to start — type name + ENTER
+- Dropdown shows `scores/*.dat` players — click to switch
+- `PB: ---` until first score, then shows Personal Best
+- `TOP 5` starts empty `---` — fills on `END GAME` or solve
+- `READY TO PLAY` scrambles 50 moves
+- `END GAME` saves score + personal best + cleans empty files
+- `EXIT` **zeroes all** — `memset(top5,0)`, `rm -rf scores/*.dat scores.dat`, `playerName=""` → next launch is clean again
+- Unified drag: L-drag tile Row/Col (top/bottom/sides fixed) | R-drag Orbit | Wheel Zoom
+- 1820x1024 window, 2-col TOP5, Guile scheme live reload `scheme/live.scm`
+
+### Build & Run
+```bash
+cd eigencube
+guix shell guile@3.0 raylib glfw pkg-config gcc-toolchain -- make clean all
+./eigencube
