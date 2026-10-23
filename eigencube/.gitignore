@@ -1,10 +1,6 @@
 eigencube
 scores/
-*.o
 *.dat
-__pycache__/
-.venv/
-Thunar/
+scores.dat
 main.c.bak
-*.dat
-scores/
+*.o
